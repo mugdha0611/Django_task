@@ -1,0 +1,54 @@
+<!-- products/templates/products/home.html -->
+{% extends "base.html" %}
+
+{% block title %}
+Home - Ecommerce Site
+{% endblock %}
+
+{% block content %}
+<section class="categories">
+    <h2>Categories</h2>
+    <div class="category-list">
+        <div class="category">
+            <h3>Clothing</h3>
+            <ul>
+                <li>Men's Shirts</li>
+                <li>Women's Dresses</li>
+                <li>Shoes</li>
+                <li>Accessories</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Electronics</h3>
+            <ul>
+                <li>Laptops</li>
+                <li>Smartphones</li>
+                <li>Televisions</li>
+                <li>Audio Equipment</li>
+            </ul>
+        </div>
+        <div class="category">
+            <h3>Home & Kitchen</h3>
+            <ul>
+                <li>Furniture</li>
+                <li>Appliances</li>
+                <li>Kitchen Utensils</li>
+                <li>Decor</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-list">
+        <!-- Product cards will be rendered here -->
+        {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

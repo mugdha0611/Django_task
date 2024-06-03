@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Recommended Products</h1>
+  <ul>
+    {% for recommendation in recommendations %}
+      <li>{{ recommendation.product.name }} ({{ recommendation.product.category }})</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
